@@ -11,6 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        divColour: "#181818",
+        borderColour: "#555555",
+      },
+      fontFamily: {
+        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+      },
+      fontSize: {
+        'base-jakarta': ['14px', {
+          lineHeight: '30px',
+          letterSpacing: '0%',
+          fontWeight: '100',
+        }],
       },
     },
   },
