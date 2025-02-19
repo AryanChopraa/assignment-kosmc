@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-export default function PostPreview() {
+export default function     PostPreview() {
   const [selectedImage, setSelectedImage] = useState<number>(1);
 
   return (
@@ -26,6 +26,10 @@ export default function PostPreview() {
                 src="/dummyimage.svg"
                 alt="Post preview"
                 fill
+                priority
+                loading="eager"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j..."
                 className="object-cover"
               />
             </div>
