@@ -3,12 +3,12 @@ import React from 'react';
 export default function PostPreview() {
   return (
     <div>
-    <h1 className="text-xl text-[#F6F6F6] mb-4 ml-2 font-semibold">When Someone comments on</h1>
+    <h1 className="text-xl text-[#F6F6F6] mb-4 ml-2 font-medium">When Someone comments on</h1>
     <div className="mb-6 bg-divColour p-4 rounded-2xl border border-borderColour">
   
       <div className="flex items-center justify-between mb-2">
-        <p className="text-md text-white font-semibold">a specific post or reel</p>
-        <button className="text-[#e5fb24] text-sm font-semibold hover:underline">View more</button>
+        <p className="text-md text-white font-medium">a specific post or reel</p>
+        <button className="text-[#e5fb24] text-sm font-medium hover:underline">View more</button>
       </div>
       <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
         {[1, 2, 3].map((item) => (

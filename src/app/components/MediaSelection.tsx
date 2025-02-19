@@ -6,7 +6,7 @@ export default function MediaSelection() {
 
   return (
     <div className="mb-6">
-      <h1 className="text-xl text-white mb-4 ml-2 font-semibold">Select the media you want to send as message</h1>
+      <h1 className="text-xl text-white mb-4 ml-2 font-medium">Select the media you want to send as message</h1>
       <div className="space-y-2 bg-divColour p-4 rounded-2xl border border-borderColour">
         {["Gallery", "Simple Message", "Button Template", "Data Collection", "Quick Reply"].map((option, i) => (
           <button
