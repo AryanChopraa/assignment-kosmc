@@ -2,100 +2,145 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-black text-white max-w-md mx-auto">
+    {/* Header */}
+    <header className="p-4 flex items-center gap-4">
+      <button className="hover:bg-gray-800 p-2 rounded-full transition-colors">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <h1 className="text-lg font-medium">When Someone comments on</h1>
+    </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="px-4 pb-20">
+      {/* Post Preview Section */}
+      <div className="mb-6">
+        <div className="flex items-center justify-between mb-2">
+          <p className="text-sm text-gray-400">a specific post or reel</p>
+          <button className="text-[#e5fb24] text-sm hover:underline">View more</button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+          {[1, 2, 3].map((item) => (
+            <div
+              key={item}
+              className="relative min-w-[100px] h-[100px] rounded-lg overflow-hidden border border-gray-800"
+            >
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-19%20at%2012.39.09%E2%80%AFPM-orLzpBGBOLJ0RFZqktaJKTGq76OFgW.png"
+                alt="Post preview"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <span className="text-sm font-bold">CONSISTENT</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Word Filter Section */}
+      <div className="mb-6">
+        <p className="text-sm text-gray-400 mb-4">And this comment has</p>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+            <span className="text-sm">a specific word or words</span>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#e5fb24]"></div>
+            </label>
+          </div>
+
+          <div className="flex gap-2">
+            <input
+              type="text"
+              placeholder="Add a word and Press plus"
+              className="flex-1 bg-gray-900 bg-opacity-50 rounded-lg px-4 py-2 text-sm border-0 focus:outline-none focus:ring-1 focus:ring-[#e5fb24]"
+            />
+            <button className="bg-[#e5fb24] text-black px-6 rounded-lg hover:bg-opacity-90 transition-colors">
+              Add
+            </button>
+          </div>
+
+          <div className="flex gap-2">
+            {["Price", "Product"].map((tag) => (
+              <div
+                key={tag}
+                className="bg-[#e5fb24] bg-opacity-10 text-[#e5fb24] px-3 py-1.5 rounded-full text-sm flex items-center gap-2"
+              >
+                {tag}
+                <div className="w-2 h-2 rounded-full bg-[#e5fb24]" />
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+            <span className="text-sm">any word or words</span>
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" value="" className="sr-only peer" />
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#e5fb24]"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      {/* Reply Settings Section */}
+      <div className="mb-6">
+        <h2 className="text-base mb-4">Setup Public Reply in the comment</h2>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+            <label className="text-sm">Yes, Set random replies on comment</label>
+            <input type="radio" name="reply" className="w-5 h-5 accent-[#e5fb24]" defaultChecked />
+          </div>
+
+          <div className="p-4 bg-gray-900 bg-opacity-50 rounded-lg space-y-2">
+            <p className="text-sm text-[#e5fb24]">Note : Customize your comments - click to add</p>
+            {["Thanks for the comment!", "We will send you DM regarding your query", "ola!"].map((text, i) => (
+              <div key={i} className="p-3 bg-gray-800 bg-opacity-50 rounded text-sm">
+                {text}
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between p-4 bg-gray-900 bg-opacity-50 rounded-lg">
+            <label className="text-sm">No, Continue</label>
+            <input type="radio" name="reply" className="w-5 h-5 accent-[#e5fb24]" />
+          </div>
+        </div>
+      </div>
+
+      {/* Media Selection Section */}
+      <div className="mb-6">
+        <h2 className="text-base mb-4">Select the media you want to send as message</h2>
+        <div className="space-y-2">
+          {["Gallery", "Simple Message", "Button Template", "Data Collection", "Quick Reply"].map((option, i) => (
+            <button
+              key={i}
+              className={`w-full p-4 text-left rounded-lg transition-colors hover:bg-gray-800 
+                ${i === 0 ? "bg-[#e5fb24] bg-opacity-10 text-[#e5fb24]" : "bg-gray-900 bg-opacity-50"}`}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Next Button */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 max-w-md mx-auto bg-black">
+        <button className="w-full bg-[#e5fb24] text-black hover:bg-opacity-90 transition-colors py-6 text-lg rounded-lg font-medium">
+          NEXT →
+        </button>
+      </div>
+    </main>
+  </div>
   );
 }
