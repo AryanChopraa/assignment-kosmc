@@ -18,7 +18,7 @@ export default function     PostPreview() {
             <div
               key={item}
               onClick={() => setSelectedImage(item)}
-              className={`relative min-w-[120px] h-[100px] rounded-lg overflow-hidden cursor-pointer border ${
+              className={`relative min-w-[100px] h-[100px] rounded-lg overflow-hidden cursor-pointer border ${
                 selectedImage === item ? 'border-[#e5fb24]' : 'border-gray-800'
               }`}
             >
