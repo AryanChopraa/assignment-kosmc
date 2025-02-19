@@ -75,7 +75,7 @@ const WordFilterSection = ({ type, title, isSelected, onSelect }: WordFilterSect
               >
                 {word}
                 <span 
-                  className="hover:text-white transition-colors cursor-pointer"
+                  className="bg-white text-gray-500 w-4 h-4 rounded-full flex items-center justify-center text-xs border border-gray-300 hover:bg-gray-100 transition-colors cursor-pointer pb-0.5"
                   onClick={() => handleRemoveWord(word)}
                 >
                   ×
