@@ -12,10 +12,10 @@ export default function MediaSelection() {
           <button
             key={i}
             onClick={() => setSelectedOption(i)}
-            className={`w-full p-4 text-left rounded-2xl transition-colors hover:bg-[#282828] focus:outline-none
+            className={`w-full p-4 text-left rounded-2xl transition-colors focus:outline-none
               ${selectedOption === i 
                 ? "bg-[#282B00] border border-[#E1F21A66] text-gray-400" 
-                : "bg-[#363535] bg-opacity-50 text-gray-400 border border-transparent"}`}
+                : "bg-[#363535] bg-opacity-50 text-gray-400 border border-transparent hover:bg-[#282828]"}`}
           >
             {option}
           </button>
