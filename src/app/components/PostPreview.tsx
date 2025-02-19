@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 export default function PostPreview() {
-  // Initialize with 1 to select the first image by default
   const [selectedImage, setSelectedImage] = useState<number>(1);
 
   return (
@@ -29,9 +28,6 @@ export default function PostPreview() {
                 fill
                 className="object-cover"
               />
-              {/* <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <span className="text-sm font-extrabold italic text-white drop-shadow-none">CONSISTENT</span>
-              </div> */}
             </div>
           ))}
         </div>
